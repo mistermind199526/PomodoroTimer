@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UA3-WG-Jur"/>
+                        <viewControllerLayoutGuide type="bottom" id="1KT-OV-Pg6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJ3-lE-PLZ">
+                                <rect key="frame" x="114" y="392" width="92" height="34"/>
+                                <color key="backgroundColor" red="0.57153566919999998" green="0.224421666109026" blue="0.087280084018514184" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="AA5-Gf-kK6"/>
+                                    <constraint firstAttribute="width" constant="92" id="leY-TN-itl"/>
+                                </constraints>
+                                <color key="tintColor" red="0.17186500069999999" green="0.5" blue="0.4093332677" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="START WAI"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPq-nf-kAJ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNy-fs-FD7" customClass="BSIndicator">
+                                <rect key="frame" x="30" y="28" width="260" height="260"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFA-2D-90U">
+                                        <rect key="frame" x="66" y="92" width="129" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="lAs-mH-nxf"/>
+                                            <constraint firstAttribute="width" constant="129" id="nat-o0-St5"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="tcP-zG-zTR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="129" id="ujC-pX-2cV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.77197758838383834" green="0.017815205861617042" blue="0.12091091396054748" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="3xe-so-nhS"/>
+                                    <constraint firstAttribute="centerY" secondItem="PFA-2D-90U" secondAttribute="centerY" constant="0.5" id="Pqk-Yr-ow1"/>
+                                    <constraint firstAttribute="centerX" secondItem="PFA-2D-90U" secondAttribute="centerX" constant="-0.5" id="Xuz-J9-9nk"/>
+                                    <constraint firstAttribute="width" constant="260" id="YrO-AR-3ID"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="wNy-fs-FD7" secondAttribute="centerY" constant="126" id="IJx-qd-Zgg"/>
+                            <constraint firstAttribute="centerX" secondItem="wNy-fs-FD7" secondAttribute="centerX" id="T4X-7d-TjM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="well" destination="wNy-fs-FD7" id="dpP-Uk-i0H"/>
+                        <outlet property="workTimeCounterLabel" destination="PFA-2D-90U" id="nSO-Xh-Utp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176" y="471"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
