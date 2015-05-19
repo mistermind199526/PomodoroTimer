@@ -16,19 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJ3-lE-PLZ">
-                                <rect key="frame" x="114" y="392" width="92" height="34"/>
-                                <color key="backgroundColor" red="0.57153566919999998" green="0.224421666109026" blue="0.087280084018514184" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="AA5-Gf-kK6"/>
-                                    <constraint firstAttribute="width" constant="92" id="leY-TN-itl"/>
-                                </constraints>
-                                <color key="tintColor" red="0.17186500069999999" green="0.5" blue="0.4093332677" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="START WAI"/>
-                                <connections>
-                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPq-nf-kAJ"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNy-fs-FD7" customClass="BSIndicator">
                                 <rect key="frame" x="30" y="28" width="260" height="260"/>
                                 <subviews>
@@ -53,6 +40,39 @@
                                     <constraint firstAttribute="width" constant="260" id="YrO-AR-3ID"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEF-oi-w09">
+                                <rect key="frame" x="51" y="381" width="102" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.55693530860268936" blue="0.12645599534252994" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="OPRESTE WAI">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yug-iJ-RV2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-Yk-4Ck">
+                                <rect key="frame" x="200" y="381" width="81" height="30"/>
+                                <state key="normal" title="PAUZA WAI">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.80618839849023871" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fpe-Sy-ZId"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJ3-lE-PLZ">
+                                <rect key="frame" x="134" y="303" width="92" height="34"/>
+                                <color key="backgroundColor" red="0.57153566919999998" green="0.224421666109026" blue="0.087280084018514184" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="AA5-Gf-kK6"/>
+                                    <constraint firstAttribute="width" constant="92" id="leY-TN-itl"/>
+                                </constraints>
+                                <color key="tintColor" red="0.17186500069999999" green="0.5" blue="0.4093332677" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="START WAI"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPq-nf-kAJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

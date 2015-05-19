@@ -19,9 +19,10 @@
 @property (strong, nonatomic) NSTimer *workTimer;
 @property (strong, nonatomic) NSTimer *pauseTimer;
 
-
+@property BOOL isPaused;
 @property int workTimerSecondsCounter;
 @property int pauseTimerSecondsCounter;
+
 
 
 @end
@@ -50,6 +51,19 @@
 {
     [self performAction:BSActionTypeStartWorkTimer];
 }
+- (IBAction)stopButtonAction:(id)sender
+{
+    
+    [self performAction:BSActionTypeStopPauseTimer];
+    [self performAction:BSActionTypeStopWorkTimer];
+    self.isPaused=YES;
+ 
+    
+    
+}
+
+- (IBAction)pauseButtonAction:(id)sender {
+}
 
 - (void)performAction:(BSActionType)action
 {
@@ -65,21 +79,43 @@
                                                              repeats:YES];;
             
             if (action == BSActionTypeStartWorkTimer) {
-                self.workTimerSecondsCounter = 3;
+                if (!self.isPaused)
+                self.workTimerSecondsCounter = 8;
+                
+                
+                
                 self.workTimer = timer;
-                  [self.well setMaxProgress:self.workTimerSecondsCounter];
+                [self.well setMaxProgress:self.workTimerSecondsCounter];
+                self.isPaused = NO;
+        
             } else {
-                self.pauseTimerSecondsCounter = 300;
-                self.pauseTimer = timer;
+                if (!self.isPaused)
+                    
+                 self.pauseTimerSecondsCounter = 300;
+                
+                 self.pauseTimer = timer;
                 [self.well setMaxProgress:self.pauseTimerSecondsCounter];
+                self.isPaused = NO;
             }
             
         }
             break;
         
-        case BSActionTypeStopPauseTimer:
+        case BSActionTypeStopPauseTimer:{
+                   [self.pauseTimer invalidate];
+
+                       _pauseTimer=nil;
+                     [_audioPlayer stop];
+                                        }
             break;
-        
+            
+        case BSActionTypeStopWorkTimer:{
+            
+                    [self.workTimer invalidate];
+                     _workTimer=nil;
+                                       }
+            break;
+                
         default:
             break;
     }
@@ -126,11 +162,9 @@
             [self.pauseTimer invalidate];
             _pauseTimer = nil;
             [_audioPlayer stop];
-           
             [self performAction:BSActionTypeStartWorkTimer];
         }
     }
-    
 
 }
 

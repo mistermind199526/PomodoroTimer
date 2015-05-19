@@ -21,6 +21,8 @@ typedef NS_ENUM(NSUInteger, BSActionType) {
 @property (strong, nonatomic) IBOutlet BSIndicator *well;
 
 - (IBAction)startButtonAction:(id)sender;
+- (IBAction)stopButtonAction:(id)sender;
+- (IBAction)pauseButtonAction:(id)sender;
 
 - (void)performAction:(BSActionType)action;
 
